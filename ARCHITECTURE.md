@@ -4,12 +4,12 @@
 
 ```mermaid
 flowchart LR
-  A[Client<br/>Browser / Postman] --> B[Spring Boot API]
-  B --> C[@Auditable + AuditAspect]
-  C --> D[RedactionUtil]
-  C --> E[(H2 / JPA AuditLog)]
-  C --> F[WebSocket STOMP<br/>/topic/audit-logs]
-  A --> G[Angular Audit Dashboard]
+  A["Client<br/>Browser / Postman"] --> B["Spring Boot API"]
+  B --> C["Auditable + AuditAspect"]
+  C --> D["RedactionUtil"]
+  C --> E["H2 / JPA AuditLog (DB)"]
+  C --> F["WebSocket STOMP<br/>/topic/audit-logs"]
+  A --> G["Angular Audit Dashboard"]
   G --> B
   F --> G
 ```
