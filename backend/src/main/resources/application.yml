@@ -1,0 +1,31 @@
+server:
+  port: ${PORT:8080}
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:h2:file:/tmp/auditdb;MODE=PostgreSQL;AUTO_SERVER=TRUE}
+    driverClassName: ${JDBC_DRIVER:org.h2.Driver}
+    username: ${JDBC_USERNAME:sa}
+    password: ${JDBC_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:update}
+  h2:
+    console:
+      enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+demo:
+  token: ${DEMO_TOKEN:}

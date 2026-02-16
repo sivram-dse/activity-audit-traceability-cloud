@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Audit Log Demo UI</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+  <h1>Activity Auditing & Traceability — Demo UI</h1>
+</header>
+<main>
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Backend Base URL</label>
+        <input id="baseUrl" placeholder="http://localhost:8080" />
+        <div class="small">Defaults to local backend.</div>
+      </div>
+      <div>
+        <label>Basic Auth User</label>
+        <input id="authUser" placeholder="auditor" value="auditor"/>
+      </div>
+      <div>
+        <label>Basic Auth Password</label>
+        <input id="authPass" placeholder="auditor123" value="auditor123" type="password"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Demo Controls (Admin)</h2>
+    <div class="row">
+      <div>
+        <label>Demo Token (optional)</label>
+        <input id="demoToken" placeholder="If configured, enter DEMO_TOKEN" />
+        <div class="small">If the service is public, you can set <code>DEMO_TOKEN</code> on Cloud Run and paste it here. Also login as <b>admin</b> to use these controls.</div>
+      </div>
+      <div class="btncol">
+        <button id="btnReset" type="button">Reset & Reseed</button>
+        <button id="btnGen" type="button">Generate 5 Orders × 4 Events</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Filter: User</label>
+        <input id="fUser" placeholder="e.g., admin"/>
+      </div>
+      <div>
+        <label>Filter: Action</label>
+        <input id="fAction" placeholder="e.g., CREATE_ORDER"/>
+      </div>
+      <div>
+        <label>From (YYYY-MM-DD)</label>
+        <input id="fFrom" type="date"/>
+      </div>
+      <div>
+        <label>To (YYYY-MM-DD)</label>
+        <input id="fTo" type="date"/>
+      </div>
+      <div>
+        <button id="loadBtn">Load Logs</button>
+      </div>
+      <div>
+        <button class="secondary" id="resetBtn">Reset</button>
+      </div>
+      <div>
+        <button class="secondary" id="exportBtn">Export CSV</button>
+      </div>
+    </div>
+    <div class="small" style="margin-top:10px;" id="status"></div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>User</th>
+          <th>Action</th>
+          <th>Entity</th>
+          <th>Entity ID</th>
+          <th>Details (masked)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

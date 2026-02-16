@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Activity Auditing & Traceability</h2>
+
+  <form [formGroup]="filterForm" class="filters">
+    <label>
+      User
+      <input formControlName="user" placeholder="admin / auditor / user" />
+    </label>
+
+    <label>
+      Action
+      <input formControlName="action" placeholder="CREATE_ORDER / DELETE_ORDER..." />
+    </label>
+
+    <label>
+      From (YYYY-MM-DD)
+      <input formControlName="from" placeholder="2026-02-01" />
+    </label>
+
+    <label>
+      To (YYYY-MM-DD)
+      <input formControlName="to" placeholder="2026-02-28" />
+    </label>
+
+    <div class="buttons">
+      <button type="button" (click)="search()">Search</button>
+      <button type="button" class="secondary" (click)="clear()">Clear</button>
+      <button type="button" class="secondary" [disabled]="!logs().length" (click)="exportCsv()">Export CSV</button>
+    </div>
+  </form>
+
+  <div class="status" *ngIf="loading()">Loading…</div>
+  <div class="error" *ngIf="error()">{{ error() }}</div>
+
+  <table *ngIf="logs().length">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>User</th>
+        <th>Action</th>
+        <th>Entity</th>
+        <th>IP</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of logs()" [class.danger]="(l.action || '').toUpperCase().includes('DELETE')">
+        <td>{{ l.timestamp }}</td>
+        <td>{{ l.username }}</td>
+        <td>{{ l.action }}</td>
+        <td>{{ l.entityType }} {{ l.entityId }}</td>
+        <td>{{ l.userIp }}</td>
+        <td class="details">{{ l.details }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="empty" *ngIf="!loading() && !logs().length && !error()">
+    No logs loaded. Apply filters (optional) and click Search.
+  </div>
+</div>
