@@ -46,7 +46,7 @@ sequenceDiagram
 ## Component Map
 
 | Layer | Component | Responsibility |
-|---|---|---|
+| --- | --- | --- |
 | API | `DemoOrderController`, `AuditLogController` | Business actions + audit query/export endpoints |
 | Cross-cutting | `@Auditable`, `AuditAspect` | Automatic audit capture after successful operations |
 | Privacy | `RedactionUtil` | Redacts secrets before persistence/export visibility |
@@ -59,7 +59,7 @@ sequenceDiagram
 ## Data Model (AuditLog)
 
 | Field | Purpose |
-|---|---|
+| --- | --- |
 | `username` | Who performed the action |
 | `action` | What operation happened |
 | `timestamp` | When it happened |
@@ -81,3 +81,4 @@ sequenceDiagram
 - Redaction occurs before persistence to avoid sensitive data at rest.
 - Role-based access prevents normal users from querying/exporting audit trails.
 - WebSocket updates are additive: system remains functional without live streaming.
+

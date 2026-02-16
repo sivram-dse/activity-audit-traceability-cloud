@@ -77,7 +77,7 @@ activity-audit-traceability-main/
 ## Backend Package Responsibilities
 
 | Package | Purpose |
-|---|---|
+| --- | --- |
 | `api` | Read/search/export audit logs for authorized users |
 | `auditing` | Annotation, AOP interception, redaction, ID extraction, persistence model |
 | `config` | Security and WebSocket/STOMP infrastructure |
@@ -86,7 +86,7 @@ activity-audit-traceability-main/
 ## Frontend Options
 
 | Path | Purpose | Typical Use |
-|---|---|---|
+| --- | --- | --- |
 | `backend/src/main/resources/static` | Built-in demo dashboard | Fast local/cloud demo |
 | `frontend-dropin/src/app/audit` | Angular reusable module | Integrate into an existing Angular app |
 | `demo-ui` | Lightweight standalone demo container | Docker-compose showcase |
@@ -94,7 +94,7 @@ activity-audit-traceability-main/
 ## Key Files for Judges
 
 | Requirement Area | Primary Files |
-|---|---|
+| --- | --- |
 | Audit capture (`who/what/when`) | `backend/src/main/java/com/hackathon/audit/auditing/AuditAspect.java`, `backend/src/main/java/com/hackathon/audit/auditing/Auditable.java` |
 | Search & filters | `backend/src/main/java/com/hackathon/audit/api/AuditLogController.java`, `backend/src/main/java/com/hackathon/audit/auditing/AuditLogSpecs.java` |
 | CSV export | `backend/src/main/java/com/hackathon/audit/api/AuditLogController.java` |
@@ -110,3 +110,4 @@ activity-audit-traceability-main/
 3. Inspect `auditing/` package for core implementation.
 4. Review `api/AuditLogController.java` for search/export behavior.
 5. Review tests in `backend/src/test/java/...` for proof points.
+

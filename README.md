@@ -30,7 +30,7 @@ mvn test
 ## Demo Credentials (HTTP Basic)
 
 | Username | Password | Role |
-|---|---|---|
+| --- | --- | --- |
 | `admin` | `admin123` | `ROLE_ADMIN` |
 | `auditor` | `auditor123` | `ROLE_AUDITOR` |
 | `user` | `user123` | `ROLE_USER` |
@@ -107,3 +107,4 @@ See:
 - `PROJECT_STRUCTURE.md`
 - `IMPLEMENTATION_SUMMARY.md`
 - `NEW_FEATURES_GUIDE.md`
+

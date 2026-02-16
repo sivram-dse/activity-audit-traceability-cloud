@@ -11,7 +11,7 @@ The project is functionally complete for hackathon submission:
 ## What Is Implemented
 
 | Area | Implementation |
-|---|---|
+| --- | --- |
 | Audit annotation | `@Auditable` marks auditable endpoints |
 | Cross-cutting capture | `AuditAspect` records user, action, entity, timestamp, metadata |
 | Sensitive-data masking | `RedactionUtil` masks fields like password/token/secret before storage |
@@ -66,3 +66,4 @@ Current result:
 ### Environment dependency to note
 - Docker Desktop requires WSL2 on Windows host.
 - If Docker daemon is unavailable, backend can still run directly via Maven.
+

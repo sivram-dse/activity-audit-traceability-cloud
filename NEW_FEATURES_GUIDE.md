@@ -122,3 +122,4 @@ npm install --save-dev @types/sockjs-client
 ```
 
 The drop-in component uses same-origin SockJS endpoint (`/ws-audit`) so it works across local, Docker, and Cloud Run environments.
+

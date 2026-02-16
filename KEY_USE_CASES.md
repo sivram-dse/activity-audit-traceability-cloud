@@ -102,7 +102,7 @@ Success criteria:
 ## Access Control Summary
 
 | Capability | USER | AUDITOR | ADMIN |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Perform auditable business actions | Yes | No (typically) | Yes |
 | View/search audit logs | No | Yes | Yes |
 | Export audit CSV | No | Yes | Yes |
@@ -115,3 +115,4 @@ Success criteria:
 - Security rules: `backend/src/main/java/com/hackathon/audit/config/SecurityConfig.java`
 - Real-time config: `backend/src/main/java/com/hackathon/audit/config/WebSocketConfig.java`
 - Angular drop-in UI: `frontend-dropin/src/app/audit`
+

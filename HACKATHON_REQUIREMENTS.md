@@ -5,7 +5,7 @@ This document maps each requirement to the implemented code paths.
 ## Coverage Matrix
 
 | Requirement | Implementation | Evidence |
-|---|---|---|
+| --- | --- | --- |
 | Capture who did what and when | `@Auditable` + `AuditAspect` persist `AuditLog` | `backend/src/main/java/com/hackathon/audit/auditing/Auditable.java`, `backend/src/main/java/com/hackathon/audit/auditing/AuditAspect.java`, `backend/src/main/java/com/hackathon/audit/auditing/AuditLog.java` |
 | Searchable audit logs | Dynamic JPA specs on audit endpoint | `backend/src/main/java/com/hackathon/audit/api/AuditLogController.java`, `backend/src/main/java/com/hackathon/audit/auditing/AuditLogSpecs.java`, `backend/src/main/java/com/hackathon/audit/auditing/AuditLogRepository.java` |
 | Date filters | Supports `from+to`, `from` only, `to` only | `backend/src/main/java/com/hackathon/audit/auditing/AuditLogSpecs.java`, `backend/src/main/java/com/hackathon/audit/api/AuditLogController.java` |
@@ -31,3 +31,4 @@ This document maps each requirement to the implemented code paths.
 - `backend/src/test/java/com/hackathon/audit/api/AuditAspectIntegrationTest.java`
 - `backend/src/test/java/com/hackathon/audit/auditing/AuditLogSpecsJpaTest.java`
 - `backend/src/test/java/com/hackathon/audit/auditing/RedactionUtilTest.java`
+
